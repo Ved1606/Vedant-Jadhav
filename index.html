@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vedant Jadhav – Junior Java, Frontend and Python Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e8eef4;--ink:#0f2a43;--muted:#4d6379;--accent:#a85200;--panel:#0f2a43;--panel-ink:#e8eef4;--kw:#f2a33a;--str:#7fd1c4;--line:#b9c8d6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1826;--ink:#e8eef4;--muted:#9bb0c3;--accent:#f2a33a;--panel:#12263b;--line:#27405a}}
+:root[data-theme="dark"]{--bg:#0b1826;--ink:#e8eef4;--muted:#9bb0c3;--accent:#f2a33a;--panel:#12263b;--line:#27405a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:radial-gradient(var(--line) 1px,transparent 1.5px) 0 0/22px 22px,var(--bg);color:var(--ink);font:400 1.1rem/1.6 "Outfit",system-ui,sans-serif}
+main{max-width:60rem;margin:0 auto;padding:3.5rem 1.25rem 4rem}
+h1{font:800 clamp(2.2rem,8vw,4.6rem)/1 "Syne",system-ui,sans-serif;margin:0 0 1rem;letter-spacing:-.03em}
+.roles{font-size:1.2rem;font-weight:500;margin:0 0 .75rem}
+.lede{max-width:40rem;color:var(--muted);margin:0 0 2.5rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem}
+.tabs button{font:500 .95rem "JetBrains Mono",ui-monospace,monospace;padding:.5rem .9rem;border-radius:6px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.tabs button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.console{background:var(--panel);color:var(--panel-ink);border-radius:10px;padding:1.25rem;font:400 .95rem/1.6 "JetBrains Mono",ui-monospace,monospace;min-height:22rem}
+.console code{display:block;white-space:pre-wrap;min-height:1.6em;margin-bottom:1rem}
+.k{color:var(--kw)}.s{color:var(--str)}
+.cursor{display:inline-block;width:.55ch;background:var(--kw);animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:34rem}
+th,td{text-align:left;vertical-align:top;padding:.55rem .75rem;border-bottom:1px solid #3a5873;font-size:.9rem}
+th{color:var(--kw);font-weight:500}
+td:first-child{white-space:nowrap}
+.rows{margin:.75rem 0 0;color:#9bb0c3;font-size:.85rem}
+footer{margin-top:2rem;color:var(--muted);font-size:.95rem}
+footer a{color:var(--accent)}
+.glow{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(26rem circle at var(--mx,75%) var(--my,8%),rgba(242,163,58,.3),transparent 62%)}
+main{position:relative;z-index:1}
+.hero{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap-reverse}
+.w{display:inline-block}
+.ch{display:inline-block;animation:rise .8s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*55ms)}
+@keyframes rise{from{opacity:0;transform:translateY(70%) rotate(6deg)}}
+.avatar{position:relative;width:11rem;height:11rem;padding:6px;border-radius:50%;flex:none;animation:pop .9s cubic-bezier(.2,.8,.2,1) .2s both}
+.avatar::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(var(--accent),#1f7a8c,#7fd1c4,var(--accent));animation:spin 5s linear infinite}
+.face{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--ink);color:var(--bg);display:grid;place-items:center;font:800 3.2rem "Syne",sans-serif}
+.face img{width:100%;height:100%;object-fit:cover}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pop{from{opacity:0;transform:scale(.4) rotate(-90deg)}}
+tr.in{animation:rowin .45s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--r)*130ms)}
+@keyframes rowin{from{opacity:0;transform:translateX(-18px)}}
+.console{transition:transform .12s ease-out,box-shadow .2s;box-shadow:0 20px 50px -20px rgba(15,42,67,.55)}
+.tabs button{transition:transform .15s,background .15s}
+.tabs button:hover{transform:translateY(-3px)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem;margin:3rem 0}
+.stat{border:1.5px solid var(--ink);border-radius:10px;padding:1rem 1.25rem;background:var(--bg)}
+.stat code{display:block;font:400 .8rem "JetBrains Mono",ui-monospace,monospace;color:var(--muted)}
+.stat b{display:block;font:800 3.6rem/1.1 "Syne",sans-serif}
+.stat span{color:var(--muted);font-size:.95rem}
+.ticker{overflow:hidden;border-block:1.5px solid var(--ink);padding:.9rem 0;margin:0 -1.25rem 3.5rem}
+.track{display:flex;gap:1.5rem;width:max-content;animation:slide 30s linear infinite}
+.track span{font:700 1.7rem "Syne",sans-serif;white-space:nowrap}
+.track span::after{content:";";color:var(--accent);margin-left:1.5rem}
+@keyframes slide{to{transform:translateX(-50%)}}
+h2{font:800 clamp(1.7rem,5vw,2.4rem)/1.1 "Syne",sans-serif;margin:0 0 1.75rem;letter-spacing:-.02em}
+.tl{list-style:none;margin:0 0 1rem 7px;padding:0;border-left:2px solid var(--ink)}
+.tl li{position:relative;padding:0 0 1.9rem 1.5rem;opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.tl li.seen{opacity:1;transform:none}
+.tl li::before{content:"";position:absolute;left:-8px;top:.35rem;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tl time{font:500 .85rem "JetBrains Mono",ui-monospace,monospace;color:var(--accent)}
+.tl h3{font:700 1.25rem/1.25 "Syne",sans-serif;margin:.15rem 0 .1rem}
+.tl p{margin:0;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.track{animation:none}.tl li{opacity:1;transform:none;transition:none}.cursor,.avatar::before{animation:none}.ch,.avatar,tr.in{animation:none}.tabs button:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<main>
+<div class="hero">
+<div>
+<h1>Vedant M Jadhav</h1>
+<p class="roles">Junior Java developer, frontend developer, Python developer</p>
+</div>
+<div class="avatar"><div class="face" id="face" role="img" aria-label="Vedant Jadhav">VJ</div></div>
+</div>
+<p class="lede">I build responsive websites and dig insights out of data. Pick a query below to read my CV the way I like to read data: as rows.</p>
+
+<div class="tabs" role="group" aria-label="Choose a query">
+<button data-q="about" aria-pressed="true">about</button>
+<button data-q="experience" aria-pressed="false">experience</button>
+<button data-q="education" aria-pressed="false">education</button>
+<button data-q="skills" aria-pressed="false">skills</button>
+<button data-q="contact" aria-pressed="false">contact</button>
+</div>
+
+<section class="console" aria-live="polite" aria-label="Query result">
+<code id="sql"></code>
+<div id="out"></div>
+</section>
+
+<div class="stats">
+<div class="stat"><code>COUNT(internships)</code><b data-n="3">3</b><span>Web development and data analytics</span></div>
+<div class="stat"><code>years_of_engineering</code><b data-n="4">4</b><span>B.E. in Information Technology, 2022 to 2026</span></div>
+<div class="stat"><code>websites_deployed</code><b data-n="1">1</b><span>Responsive site for Megha Transport Services</span></div>
+</div>
+
+<div class="ticker" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<h2>How I got here</h2>
+<ol class="tl" id="tl"></ol>
+
+<footer>Based in Nerul, Navi Mumbai. B.E. in Information Technology, class of 2026. <a href="mailto:rvedant04@gmail.com">Email me</a>.</footer>
+</main>
+
+<script>
+var Q={
+about:{sql:"SELECT summary FROM vedant;",cols:["summary"],rows:[["Motivated, detail-oriented software developer with hands-on knowledge of Java, Python, SQL, database management, frontend web development and data analytics. Skilled in object-oriented programming, responsive web apps, data cleaning, analysis and visualization."]]},
+experience:{sql:"SELECT role, company, period, highlight\nFROM experience\nORDER BY start_date DESC;",cols:["role","company","period","highlight"],rows:[
+["Data Analytics Intern","Imarticus Learning, Thane","Feb 2025 – Mar 2025","Cleaned and preprocessed real business datasets, found trends, and built visualizations and reports."],
+["Data Analytics Intern","Accenture (Forage), Virtual","Aug 2024 – Sep 2024","Analyzed business datasets for patterns and presented insights."],
+["Web Development Intern","Megha Transport Services, Panvel","Jan 2024 – May 2024","Built and deployed a responsive website for a logistics business."]]},
+education:{sql:"SELECT degree, school, period\nFROM education\nORDER BY start_date DESC;",cols:["degree","school","period"],rows:[
+["Bachelor of Engineering (IT)","Saraswati College of Engineering, Kharghar","Oct 2022 – Jul 2026"],
+["Higher Secondary Certificate (HSC)","Armed Forces Preparatory Institute, Kolhapur","Jul 2020 – May 2022"],
+["Service Desk Operations (certification)","Edubridge, Thane","–"]]},
+skills:{sql:"SELECT skill, area\nFROM skills\nORDER BY area;",cols:["skill","area"],rows:[
+["Java","Programming"],["SQL and database management","Data"],["Data analytics","Data"],["Excel","Data"],["HTML5 and CSS3","Frontend"],["Frontend web development","Frontend"],["Problem solving","Working style"],["Analytical thinking","Working style"],["Quick learner and adaptable","Working style"]]},
+contact:{sql:"SELECT email, phone, location\nFROM vedant\nLIMIT 1;",cols:["email","phone","location"],rows:[["rvedant04@gmail.com","+91 8779584200","Nerul, Navi Mumbai"]]}
+};
+var KW=/\b(SELECT|FROM|ORDER BY|LIMIT|DESC)\b/g;
+var sqlEl=document.getElementById("sql"),out=document.getElementById("out"),timer;
+var calm=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function paint(t,done){sqlEl.innerHTML=t.replace(KW,'<span class="k">$1</span>')+(done?"":'<span class="cursor">&nbsp;</span>');}
+function table(q){
+var h="<div class='wrap'><table><thead><tr>"+q.cols.map(function(c){return"<th>"+c+"</th>"}).join("")+"</tr></thead><tbody>";
+q.rows.forEach(function(r,n){h+="<tr class='in' style='--r:"+n+"'>"+r.map(function(c){return"<td>"+c+"</td>"}).join("")+"</tr>"});
+out.innerHTML=h+"</tbody></table></div><p class='rows'>"+q.rows.length+(q.rows.length==1?" row":" rows")+" returned</p>";}
+function run(key){
+clearInterval(timer);var q=Q[key],i=0;out.innerHTML="";
+if(calm){paint(q.sql,true);table(q);return;}
+timer=setInterval(function(){i++;paint(q.sql.slice(0,i),false);if(i>=q.sql.length){clearInterval(timer);paint(q.sql,true);table(q);}},22);}
+document.querySelectorAll(".tabs button").forEach(function(b){b.addEventListener("click",function(){
+document.querySelectorAll(".tabs button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});run(b.dataset.q);});});
+var h1=document.querySelector("h1"),idx=0;
+h1.setAttribute("aria-label",h1.textContent);
+h1.innerHTML=h1.textContent.split(" ").map(function(w){return'<span class="w" aria-hidden="true">'+w.split("").map(function(c){return'<span class="ch" style="--i:'+(idx++)+'">'+c+"</span>"}).join("")+"</span>"}).join(" ");
+var glow=document.querySelector(".glow"),con=document.querySelector(".console");
+if(!calm){
+document.addEventListener("pointermove",function(e){glow.style.setProperty("--mx",e.clientX+"px");glow.style.setProperty("--my",e.clientY+"px");});
+if(window.matchMedia("(hover:hover)").matches){
+con.addEventListener("pointermove",function(e){var r=con.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;con.style.transform="perspective(1000px) rotateX("+(-y*5)+"deg) rotateY("+(x*6)+"deg)";});
+con.addEventListener("pointerleave",function(){con.style.transform="";});}}
+var sk=["Java","Python","SQL","Database management","HTML5","CSS3","Excel","Data analytics","Data cleaning","Visualization","Problem solving"];
+var tk=document.getElementById("track"),sp=sk.map(function(x){return"<span>"+x+"</span>"}).join("");tk.innerHTML=sp+sp;
+var T=[["Jul 2020 – May 2022","Higher Secondary Certificate","Armed Forces Preparatory Institute, Kolhapur"],["Oct 2022 – Jul 2026","B.E. in Information Technology","Saraswati College of Engineering, Kharghar"],["Jan 2024 – May 2024","Web Development Intern","Megha Transport Services, Panvel. Built and deployed a responsive logistics website."],["Aug 2024 – Sep 2024","Data Analytics Intern","Accenture (Forage), virtual. Analyzed business datasets for trends and insights."],["Feb 2025 – Mar 2025","Data Analytics Intern","Imarticus Learning, Thane. Data cleaning, visualization and reports."]];
+document.getElementById("tl").innerHTML=T.map(function(t){return"<li><time>"+t[0]+"</time><h3>"+t[1]+"</h3><p>"+t[2]+"</p></li>"}).join("");
+function count(b){var n=+b.dataset.n,t0=null;if(calm)return;function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1);b.textContent=Math.round(n*p);if(p<1)requestAnimationFrame(f);}b.textContent="0";requestAnimationFrame(f);}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);if(e.target.tagName=="B")count(e.target);else e.target.classList.add("seen");});},{threshold:.3});
+document.querySelectorAll(".stat b,.tl li").forEach(function(el){io.observe(el);});
+run("about");
+</script>
+</body>
+</html>
